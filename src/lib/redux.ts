@@ -4,8 +4,9 @@ import { createStore } from 'redux';
 import { Task } from '../components/types';
 import { TaskActionTypes, ARCHIVE_TASK, PIN_TASK } from './types.d';
 
-interface TaskState {
+export interface TaskState {
   tasks: Task[];
+  error?: string;
 }
 // All our reducers simply change the state of a single task.
 function taskStateReducer(taskState: string) {
@@ -30,7 +31,8 @@ const defaultTasks = [
 
 // We export the constructed redux store
 const initialState: TaskState = {
-  tasks: defaultTasks
+  tasks: defaultTasks,
+  error: ''
 };
 
 // The reducer describes how the contents of the store change for each action

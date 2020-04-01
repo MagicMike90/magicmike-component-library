@@ -7,7 +7,9 @@ export default {
   component: PureTaskList,
   title: 'TaskList',
   //   Decorators are a way to provide arbitrary wrappers to stories
-  decorators: [story => <div style={{ padding: '3rem' }}>{story()}</div>],
+  decorators: [
+    (story: any) => <div style={{ padding: '3rem' }}>{story()}</div>
+  ],
   excludeStories: /.*Data$/
 };
 

@@ -4,6 +4,7 @@ import TaskView from './Task';
 import { Task } from './types';
 import { connect } from 'react-redux';
 import { archiveTask, pinTask } from '../lib/actions';
+import { TaskState } from '../lib/redux';
 
 interface Props {
   loading?: boolean;
@@ -71,8 +72,8 @@ export const PureTaskList: React.FC<Props> = ({
 };
 
 export default connect(
-  ({ tasks }) => ({
-    tasks: tasks.filter(
+  (state: TaskState) => ({
+    tasks: state.tasks.filter(
       (t: Task) => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED'
     )
   }),
