@@ -2,14 +2,16 @@ import React from 'react';
 
 import TaskView from './Task';
 import { Task } from './types';
+import { connect } from 'react-redux';
+import { archiveTask, pinTask } from '../lib/actions';
 
 interface Props {
   loading?: boolean;
   tasks: Task[];
-  onArchiveTask: () => void;
-  onPinTask: () => void;
+  onArchiveTask: (id: string) => void;
+  onPinTask: (id: string) => void;
 }
-const TaskList: React.FC<Props> = ({
+export const PureTaskList: React.FC<Props> = ({
   loading,
   tasks,
   onPinTask,
@@ -68,4 +70,14 @@ const TaskList: React.FC<Props> = ({
   );
 };
 
-export default TaskList;
+export default connect(
+  ({ tasks }) => ({
+    tasks: tasks.filter(
+      (t: Task) => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED'
+    )
+  }),
+  dispatch => ({
+    onArchiveTask: (id: string) => dispatch(archiveTask(id)),
+    onPinTask: (id: string) => dispatch(pinTask(id))
+  })
+)(PureTaskList);

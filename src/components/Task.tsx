@@ -3,8 +3,8 @@ import { Task } from './types';
 
 interface Props {
   task: Task;
-  onArchiveTask: () => void;
-  onPinTask: () => void;
+  onArchiveTask: (id: string) => void;
+  onPinTask: (id: string) => void;
 }
 const TaskView: React.FC<Props> = ({
   task: { id, title, state },
