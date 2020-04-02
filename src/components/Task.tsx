@@ -10,7 +10,7 @@ const TaskView: React.FC<Props> = ({
   task: { id, title, state },
   onArchiveTask,
   onPinTask
-}) => {
+}: Props) => {
   return (
     <div className={`list-item ${state}`}>
       <label className="checkbox">

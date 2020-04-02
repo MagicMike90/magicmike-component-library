@@ -9,7 +9,7 @@ import { TaskState } from '../lib/redux';
 interface Props {
   error?: string;
 }
-export const PureInboxScreen: React.FC<Props> = () => {
+export const PureInboxScreen: React.FC = () => {
   const error = useSelector((state: TaskState) => state.error);
   if (error) {
     return (

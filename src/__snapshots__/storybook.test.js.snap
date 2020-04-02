@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button Text 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "grey",
+    }
+  }
+>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Hello Button
+  </button>
+</div>
+`;
+
 exports[`Storyshots InboxScreen Default 1`] = `
 <div
   className="page lists-show"

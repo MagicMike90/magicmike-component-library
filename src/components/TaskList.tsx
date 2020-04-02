@@ -17,7 +17,7 @@ export const PureTaskList: React.FC<Props> = ({
   tasks,
   onPinTask,
   onArchiveTask
-}) => {
+}: Props) => {
   const events = {
     onPinTask,
     onArchiveTask
