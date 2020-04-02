@@ -1,16 +1,13 @@
 // src/components/InboxScreen.js
 
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import TaskList from './TaskList';
-import { TaskState } from '../lib/redux';
-
 interface Props {
   error?: string;
 }
-export const PureInboxScreen: React.FC = () => {
-  const error = useSelector((state: TaskState) => state.error);
+export const PureInboxScreen: React.FC<Props> = ({ error }: Props) => {
+  // const error = useSelector((state: TaskState) => state.error);
   if (error) {
     return (
       <div className="page lists-show">

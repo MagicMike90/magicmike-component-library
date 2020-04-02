@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 import TaskView from '../components/Task';
-import { withKnobs, object } from '@storybook/addon-knobs/react';
+import { withKnobs, object } from '@storybook/addon-knobs';
 
 // To tell Storybook about the component we are documenting
 export default {
