@@ -28,6 +28,7 @@ const TaskView: React.FC<Props> = ({
           value={title}
           readOnly={true}
           placeholder="Input title"
+          style={{ textOverflow: 'ellipsis' }}
         />
       </div>
 
